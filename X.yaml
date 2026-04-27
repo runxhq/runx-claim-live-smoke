@@ -1,14 +1,16 @@
-schema_version: "1"
-name: claim-live-smoke
-description: Live production smoke skill for GitHub App claim verification.
-source:
-  type: cli-tool
-  command: node
-  args:
-    - -e
-    - "process.stdout.write('runx claim live smoke')"
-  timeout_seconds: 10
-inputs: {}
-runx:
-  input_resolution:
-    required: []
+skill: claim-live-smoke
+runners:
+  default:
+    default: true
+    type: cli-tool
+    command: node
+    args:
+      - -e
+      - "process.stdout.write('runx claim live smoke')"
+    timeout_seconds: 10
+    inputs: {}
+    runx:
+      input_resolution:
+        required: []
+harness:
+  cases: []
